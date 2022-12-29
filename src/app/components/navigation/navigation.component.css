@@ -1,0 +1,21 @@
+#ap-logo{
+  width: 8rem;
+  height: 4.5rem;
+}
+
+.navbar-brand{
+  color: white;
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.nav-link{
+  color: white;
+  font-size: 1.5vw;
+}
+
+.btn{
+  width: 6rem;
+  height: 3rem;
+  font-size: 1.75vw;
+}
