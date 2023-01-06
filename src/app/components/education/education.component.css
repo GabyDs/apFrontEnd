@@ -1,6 +1,5 @@
 .container-fluid{
   background-color: rgba(33,37,41);
-  text-align: center;
 }
 
 .row{
@@ -9,16 +8,8 @@
   border-bottom: solid white;
 }
 
-#profile{
-  border-radius: 2rem;
-}
-
-#name{
-  color: white;
-  font-weight: bold;
-  font-size: 2rem;
-
-  margin-top: 2.8rem;
+ul{
+  list-style-type: none;
 }
 
 #title{
@@ -26,11 +17,13 @@
   font-weight: bold;
   text-decoration: underline;
   font-size: 2rem;
-
-  margin-top: 2.8rem;
 }
 
-p{
+h1, h3{
+ display: inline; 
+}
+
+h1, h3, p{
   color: white;
   font-size: 1.5rem;
 }
