@@ -13,6 +13,8 @@ import { FooterComponent } from './components/footer/footer.component';
 
 /* Comunicacion entre backend y frontend */
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     HysComponent,
     ProjectsComponent,
     FooterComponent,
+    HomeComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
