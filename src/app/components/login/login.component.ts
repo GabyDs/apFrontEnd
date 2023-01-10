@@ -9,6 +9,7 @@ import { TokenService } from 'src/app/services/token.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent {
 
   isLogged = false;
@@ -30,14 +31,15 @@ export class LoginComponent {
   }
 
   onLogin(): void{
-    this.userLogin = new UserLogin(this.userName, this.password); 
+    this.userLogin = new UserLogin(this.userName, this.password);
     this.authService.login(this.userLogin).subscribe(data => {
       this.isLogged = true;
       this.isLogginFail = false;
       this.tokenService.setToken(data.token);
       this.tokenService.setUserName(data.userName);
-      this.tokenService.setAuthorities(data.authorities);
-      this.roles = data.authorities;
+      this.tokenService.setAuthorities(data.authority);
+      this.roles = data.authority;
+
       this.router.navigate([""]);
     }, err => {
       this.isLogged = false;

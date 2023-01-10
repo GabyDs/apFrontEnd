@@ -21,7 +21,9 @@
         </li>
       </ul>
       <!--Login button-->
-      <button class="btn btn-outline-light" (click)="login()">Login</button>
+      <button class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">Login</button>
+      <!--Exit button-->
+      <button class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">Exit</button>
     </div>
   </div>
 </nav>

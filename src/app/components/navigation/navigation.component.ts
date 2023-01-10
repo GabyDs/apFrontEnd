@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-navigation',
@@ -8,9 +9,21 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent {
 
-  constructor(private router: Router){}
+  isLogged = false;
+
+  constructor(private router: Router, private tokerService: TokenService){}
 
   ngOnInit(): void{
+    if(this.tokerService.getToken()){
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  }
+
+  onLogOut(): void{
+    this.tokerService.logOut();
+    location.reload();
   }
 
   login(){
