@@ -1,35 +1,48 @@
 <div class="container-fluid">
   <div class="row">
     <h1 id="title">Experience</h1>
+    <div class="col-lg-2">
+      <button class="btn btn-outline-light" type="button" routerLink="/newexp" *ngIf="isLogged">New Experience</button>
+    </div>
+
+    <div class="col-lg-1"></div>
+    <div class="col-lg-11">
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let Experience of exp">
+            <td><h3>{{Experience.nameW}}</h3></td>
+            <td><p>{{Experience.descriptionW}}</p></td>
+            <td *ngIf="isLogged">
+              <button class="btn btn-outline-light" type="button" routerLink="/editexp/{{Experience.id}}">
+                <i class="bi bi-pencil-fill"></i> Edit
+              </button>
+            </td>
+            <td *ngIf="isLogged">
+              <button class="btn btn-outline-danger" type="button" (click)="deleteExperience(Experience.id)">
+                <i class="bi bi-trash-fill"></i> Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- STATIC
     <div class="col-lg-1"></div>
     <div class="col-lg-11">
       <ul>
-        <li>
-          <h1>Work 1</h1>
-          <h3>(years)</h3>
-        </li>
-        <p>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
-        </p>
+        <li><h1>Work 1</h1> - <h3>(years)</h3></li>
+        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
       </ul>
       <ul>
-        <li>
-          <h1>Work 2</h1>
-          <h3>(years)</h3>
-        </li>
-        <p>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
-        </p>
+        <li><h1>Work 2</h1> - <h3>(years)</h3></li>
+        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
       </ul>
       <ul>
-        <li>
-          <h1>Work 3</h1>
-          <h3>(years)</h3>
-        </li>
-        <p>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
-        </p>
+        <li><h1>Work 3</h1> - <h3>(years)</h3></li>
+        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
       </ul>
     </div>
+    -->
   </div>
 </div>

@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nameW">Name of Work</label>
+                    <input type="text" class="form-control" id="nameW" name="nameW" [(ngModel)]="nameW" required>
+                </div>
+                <div class="form-group">
+                    <label for="descriptionW">Description of Work</label>
+                    <input type="text" class="form-control" id="descriptionW" name="descriptionW" [(ngModel)]="descriptionW" required>
+                </div>
+                <button class="btn btn-primary">Add Experience</button>
+            </form>
+        </div>
+    </div>
+</div>
