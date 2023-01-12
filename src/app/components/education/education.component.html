@@ -1,35 +1,30 @@
 <div class="container-fluid">
   <div class="row">
     <h1 id="title">Education</h1>
+    <div class="col-lg-2">
+      <button class="btn btn-outline-light" type="button" routerLink="/newedu" *ngIf="isLogged">New Education</button>
+    </div>
+
     <div class="col-lg-1"></div>
     <div class="col-lg-11">
-      <ul>
-        <li>
-          <h1>Education 1</h1>
-          <h3>(years)</h3>
-        </li>
-        <p>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
-        </p>
-      </ul>
-      <ul>
-        <li>
-          <h1>Education 2</h1>
-          <h3>(years)</h3>
-        </li>
-        <p>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
-        </p>
-      </ul>
-      <ul>
-        <li>
-          <h1>Education 3</h1>
-          <h3>(years)</h3>
-        </li>
-        <p>
-          Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.
-        </p>
-      </ul>
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let Education of education">
+            <td><h3>{{Education.nameE}}</h3></td>
+            <td><p>{{Education.descriptionE}}</p></td>
+            <td *ngIf="isLogged">
+              <button class="btn btn-outline-light" type="button" routerLink="/editedu/{{Education.id}}">
+                <i class="bi bi-pencil-fill"></i> Edit
+              </button>
+            </td>
+            <td *ngIf="isLogged">
+              <button class="btn btn-outline-danger" type="button" (click)="delete(Education.id)">
+                <i class="bi bi-trash-fill"></i> Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
