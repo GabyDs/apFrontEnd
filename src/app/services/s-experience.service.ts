@@ -8,7 +8,7 @@ import { Experience } from '../model/experience';
 })
 export class SExperienceService {
 
-  expURL = 'http://localhost:8080/workExp/';
+  expURL = 'https://backendgabyds.onrender.com/workExp/';
 
   constructor(private httpClient: HttpClient) { }
 

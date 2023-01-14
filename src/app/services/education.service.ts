@@ -8,7 +8,7 @@ import { Education } from '../model/education';
 })
 export class EducationService {
 
-  URL = 'http://localhost:8080/education/';
+  URL = 'https://backendgabyds.onrender.com/education/';
 
   constructor(private httpClient: HttpClient) { }
 

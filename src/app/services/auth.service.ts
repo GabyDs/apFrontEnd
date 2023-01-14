@@ -10,7 +10,8 @@ import { UserLogin } from '../model/user-login';
 })
 export class AuthService {
 
-  authURL = 'http://localhost:8080/auth/';
+  // authURL = 'http://localhost:8080/auth/';
+  authURL = 'https://backendgabyds.onrender.com/auth/';
 
   constructor(private httpClient: HttpClient) { }
 
