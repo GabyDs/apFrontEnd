@@ -6,7 +6,15 @@
 .row{
   margin: 0;
   padding: 2rem;
+}
+
+.skills{
   border-bottom: solid white;
+}
+
+button{
+  margin-top: 1rem;
+  margin-right: 1rem;
 }
 
 #title{

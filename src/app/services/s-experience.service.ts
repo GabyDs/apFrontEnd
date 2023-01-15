@@ -8,27 +8,28 @@ import { Experience } from '../model/experience';
 })
 export class SExperienceService {
 
-  expURL = 'https://backendgabyds.onrender.com/workExp/';
+  URL = 'https://backendgabyds.onrender.com/workExp/';
+  // URL = 'http://localhost:8080/workExp/';
 
   constructor(private httpClient: HttpClient) { }
 
   public list(): Observable<Experience[]> {
-    return this.httpClient.get<Experience[]>(this.expURL + 'list');
+    return this.httpClient.get<Experience[]>(this.URL + 'list');
   }
 
   public detail(id: number): Observable<Experience>{
-    return this.httpClient.get<Experience>(this.expURL + `detail/${id}`);
+    return this.httpClient.get<Experience>(this.URL + `detail/${id}`);
   }
 
   public save(experience: Experience): Observable<any>{
-    return this.httpClient.post<any>(this.expURL + 'create', experience);
+    return this.httpClient.post<any>(this.URL + 'create', experience);
   }
 
   public update(id: number, experience: Experience): Observable<any>{
-    return this.httpClient.put<any>(this.expURL + `update/${id}`, experience);
+    return this.httpClient.put<any>(this.URL + `update/${id}`, experience);
   }
 
   public delete(id: number): Observable<any>{
-    return this.httpClient.delete<any>(this.expURL + `delete/${id}`);
+    return this.httpClient.delete<any>(this.URL + `delete/${id}`);
   }
 }

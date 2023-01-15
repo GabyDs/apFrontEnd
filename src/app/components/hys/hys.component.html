@@ -1,29 +1,22 @@
 <div class="container-fluid">
   <div class="row">
-    <h1 id="title">Hard and Soft Skills</h1> 
-    <div class="col-lg-3">
-      <span>HTML</span>
-      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar progress-bar-striped" style="width: 85%;"></div>
-      </div>
+    <h1 id="title">Hard and Soft Skills</h1>
+    <div class="col-lg-2">
+      <button class="btn btn-outline-light" type="button" routerLink="/newskill" *ngIf="isLogged">New Skill</button>
     </div>
-    <div class="col-lg-3">
-      <span>CSS</span>
+  </div>
+  <div class="row skills">
+    <div class="col-lg-4" *ngFor="let skill of skill">
+      <span>{{skill.name}}</span>
       <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar progress-bar-striped" style="width: 65%;"></div>
+        <div class="progress-bar progress-bar-striped"  [style.width.%] = "skill.percent"></div>
       </div>
-    </div>
-    <div class="col-lg-3">
-      <span>Javascript</span>
-      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar progress-bar-striped" style="width: 45%;"></div>
-      </div>
-    </div>
-    <div class="col-lg-3">
-      <span>Angular</span>
-      <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar progress-bar-striped" style="width: 35%;"></div>
-      </div>
+      <button *ngIf="isLogged" class="btn btn-outline-light" type="button" routerLink="/editskill/{{skill.id}}">
+        <i class="bi bi-pencil-fill"></i> Edit
+      </button>
+      <button *ngIf="isLogged" class="btn btn-outline-danger" type="button" (click)="deleteSkill(skill.id)">
+        <i class="bi bi-trash-fill"></i> Delete
+      </button>
     </div>
   </div>
 </div>
