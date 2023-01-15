@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Skill } from '../model/skill';
 
 @Injectable({
@@ -8,8 +9,8 @@ import { Skill } from '../model/skill';
 })
 export class SkillService {
 
-  URL = 'https://backendgabyds.onrender.com/hys/';
-  // URL = 'http://localhost:8080/hys/';
+  URL = environment.URL + 'hys/';
+  //URL = 'http://localhost:8080/hys/';
 
   constructor(private httpClient: HttpClient) { }
 

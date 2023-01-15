@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Experience } from '../model/experience';
 
 @Injectable({
@@ -8,8 +9,8 @@ import { Experience } from '../model/experience';
 })
 export class SExperienceService {
 
-  URL = 'https://backendgabyds.onrender.com/workExp/';
-  // URL = 'http://localhost:8080/workExp/';
+  URL = environment.URL + 'workExp/';
+  //URL = 'http://localhost:8080/workExp/';
 
   constructor(private httpClient: HttpClient) { }
 

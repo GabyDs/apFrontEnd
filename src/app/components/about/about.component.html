@@ -1,7 +1,11 @@
 <div class="container-fluid">
+  <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">
+    <button class="btn btn-outline-light" type="button" routerLink="/editabout/1" *ngIf="isLogged">Edit Profile</button>
+  </div>
   <div class="row">
+    
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">  
-      <img class="img-fluid" id="profile" src="../../../assets/Profile/me.jpg" alt="profile">
+      <img class="img-fluid" id="profile" src={{persona.img}} alt="profile">
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">
       <h3 id="name">{{persona.name}} {{persona.lastName}}</h3>
@@ -11,7 +15,7 @@
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8">
       <span>
         <h1 id="title">About me</h1>
-        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+        <p>{{persona.description}}</p>
       </span>
     </div>
   </div>
