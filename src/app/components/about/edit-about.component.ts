@@ -26,6 +26,7 @@ export class EditAboutComponent implements OnInit{
       }
     )
   }
+  
 
   onUpdate(): void{
     const id = this.activatedRouter.snapshot.params["id"];

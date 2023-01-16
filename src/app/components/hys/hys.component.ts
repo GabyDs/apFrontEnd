@@ -18,7 +18,7 @@ export class HysComponent implements OnInit {
   ngOnInit(): void {
     this.setSkill();
     
-    if(this.tokenService.getToken()){
+    if(this.tokenService.getToken() && this.tokenService.getAuthorities().includes("ROLE_ADMIN")){
       this.isLogged = true;
     } else {
       this.isLogged = false;

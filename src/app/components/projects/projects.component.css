@@ -9,7 +9,8 @@
 }
 
 .container{
-  width: auto;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 .project-header, .project-image{
@@ -31,4 +32,9 @@ h1, p{
 
 .img{
   box-shadow: 10px 10px 30px black;
+}
+
+.buttons{
+  display: flex;
+  gap: 1rem;
 }

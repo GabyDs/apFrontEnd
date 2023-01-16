@@ -20,7 +20,9 @@ export class ExperienceComponent implements OnInit{
 
     this.setExperience();
 
-    if(this.tokenService.getToken()){
+    if(this.tokenService.getToken() && this.tokenService.getAuthorities().includes("ROLE_ADMIN")){
+      console.log(this.tokenService.getAuthorities());
+      
       this.isLogged = true;
     } else {
       this.isLogged = false;

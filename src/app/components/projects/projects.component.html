@@ -1,22 +1,24 @@
 <div class="container-fluid">
   <div class="row">
     <h1 id="title">Projects</h1>
-    <div class="container">
-      <div class="col-sm-12 col-md-7 col-lg-7 project-header">
-        <h1>Cross Method App</h1>
-        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
-      </div>
-      <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 project-image">
-        <img class="img img-fluid" src="../../../assets/projects/cross-method.jpg" alt="project"> 
-      </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-2">
+      <button class="btn btn-outline-light" type="button" routerLink="newproject" *ngIf="isLogged">New project</button>
     </div>
-    <div class="container">
+    <div class="container" *ngFor="let project of project">
       <div class="col-sm-12 col-md-7 col-lg-7 project-header">
-        <h1>Cross Method App</h1>
-        <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
+        <h1>{{project.name}}</h1>
+        <p>{{project.description}}</p>
       </div>
       <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1 project-image">
-        <img class="img img-fluid" src="../../../assets/projects/cross-method.jpg" alt="project"> 
+        <img class="img img-fluid" src={{project.img}} alt="project"> 
+      </div>
+      <div class="buttons">
+        <button class="btn btn-outline-light" type="button" *ngIf="isLogged" routerLink="/editproject/{{project.id}}">
+          <i class="bi bi-pencil-fill"></i> Edit
+        </button>
+        <button class="btn btn-outline-danger" type="button" *ngIf="isLogged" (click)="delete(project.id)">
+          <i class="bi bi-trash-fill"></i> Delete
+        </button>
       </div>
     </div>
   </div>

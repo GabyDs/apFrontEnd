@@ -20,7 +20,7 @@ export class EducationComponent implements OnInit {
 
     this.setEducation();
 
-    if(this.tokenService.getToken()){
+    if(this.tokenService.getToken() && this.tokenService.getAuthorities().includes("ROLE_ADMIN")){
       this.isLogged = true;
     } else {
       this.isLogged = false;
