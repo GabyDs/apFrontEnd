@@ -15,8 +15,8 @@ export class TokenService {
 
   public setToken(token: string): void{
     // elimina un token viejo y reemplaza por uno nuevo
-    sessionStorage.removeItem(TOKEN_KEY);
-    sessionStorage.setItem(TOKEN_KEY, token);
+    window.sessionStorage.removeItem(TOKEN_KEY);
+    window.sessionStorage.setItem(TOKEN_KEY, token);
   }
 
   public getToken(): string{
@@ -25,8 +25,8 @@ export class TokenService {
 
   public setUserName(userName: string): void{
     // elimina un nombre viejo y reemplaza por uno nuevo
-    sessionStorage.removeItem(USERNAME_KEY);
-    sessionStorage.setItem(USERNAME_KEY, userName);
+    window.sessionStorage.removeItem(USERNAME_KEY);
+    window.sessionStorage.setItem(USERNAME_KEY, userName);
   }
 
   public getUserName(): string{
@@ -35,8 +35,8 @@ export class TokenService {
 
   public setAuthorities(authorities: string[]): void{
     // elimina un authority viejo y reemplaza por uno nuevo
-    sessionStorage.removeItem(AUTHORITIES_KEY);
-    sessionStorage.setItem(AUTHORITIES_KEY, JSON.stringify(authorities));
+    window.sessionStorage.removeItem(AUTHORITIES_KEY);
+    window.sessionStorage.setItem(AUTHORITIES_KEY, JSON.stringify(authorities));
   }
 
   public getAuthorities(): string[] {
